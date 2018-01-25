@@ -1,0 +1,45 @@
+PODS:
+  - DACircularProgress (2.3.1)
+  - PureLayout (3.0.2)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
+  - SVProgressHUD (2.0.4)
+  - ToolKit (0.1.0):
+    - PureLayout (~> 3.0.2)
+    - ReactiveCocoa (~> 2.5)
+    - SDWebImage
+    - SVProgressHUD (~> 2.0.2)
+    - ToolKit/TTNotification (= 0.1.0)
+  - ToolKit/TTNotification (0.1.0):
+    - PureLayout (~> 3.0.2)
+    - ReactiveCocoa (~> 2.5)
+    - SDWebImage
+    - SVProgressHUD (~> 2.0.2)
+
+DEPENDENCIES:
+  - DACircularProgress
+  - ToolKit (from `../ToolKit.podspec`)
+
+EXTERNAL SOURCES:
+  ToolKit:
+    :path: ../ToolKit.podspec
+
+SPEC CHECKSUMS:
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
+  ToolKit: 261fe4ba28f4ca9758d55c351c00b28e069e1e7a
+
+PODFILE CHECKSUM: 0501dd03163cd97e7258912b833088b12309cd37
+
+COCOAPODS: 1.3.1

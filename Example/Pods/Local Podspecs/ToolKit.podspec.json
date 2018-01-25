@@ -1,0 +1,51 @@
+{
+  "name": "ToolKit",
+  "version": "0.1.0",
+  "summary": "A short description of RYBTool.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://git.oschina.net/rjtx/RYBTool",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "tangguoan": "838210419@qq.com"
+  },
+  "source": {
+    "git": "https://git.oschina.net/rjtx/RYBTool.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ToolKit/Classes/**/*.{h,m,mm,c,cpp,xib}",
+  "resource_bundles": {
+    "ToolKit": [
+      "ToolKit/Assets/*.png",
+      "ToolKit/Assets/**/*.png",
+      "ToolKit/Assets/*.gif",
+      "ToolKit/Assets/*.plist"
+    ]
+  },
+  "public_header_files": "ToolKit/**/ToolKit.h",
+  "dependencies": {
+    "ReactiveCocoa": [
+      "~> 2.5"
+    ],
+    "PureLayout": [
+      "~> 3.0.2"
+    ],
+    "SDWebImage": [
+
+    ],
+    "SVProgressHUD": [
+      "~> 2.0.2"
+    ]
+  },
+  "subspecs": [
+    {
+      "name": "TTNotification",
+      "source_files": "ToolKit/TTNotificationCenter/**/*.{h,m}"
+    }
+  ]
+}
