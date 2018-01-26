@@ -1,7 +1,7 @@
 {
   "name": "ToolKit",
   "version": "0.1.0",
-  "summary": "A short description of RYBTool.",
+  "summary": "A short description of ToolKit.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://git.oschina.net/rjtx/RYBTool",
   "license": {
@@ -27,7 +27,7 @@
       "ToolKit/Assets/*.plist"
     ]
   },
-  "public_header_files": "ToolKit/**/ToolKit.h",
+  "public_header_files": "ToolKit/**/*.h",
   "dependencies": {
     "ReactiveCocoa": [
       "~> 2.5"

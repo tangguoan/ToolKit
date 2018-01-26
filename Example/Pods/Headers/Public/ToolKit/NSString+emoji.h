@@ -1,0 +1,1 @@
+../../../../../ToolKit/Classes/nsstring/NSString+emoji.h

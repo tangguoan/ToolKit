@@ -1,0 +1,1 @@
+../../../../../ToolKit/Classes/AuthorizationManager/AuthorizationManager.h
