@@ -6,8 +6,6 @@
 //
 //
 
-#import <Foundation/Foundation.h>
-
 #import "UIColor+Util.h"
 #import "NSDictionary+DataValue.h"
 #import "UIImage+utils.h"
@@ -19,8 +17,7 @@
 #import "AuthorizationManager.h"
 #import "TTNotificationCenter.h"
 #import "RYBUrlRouter.h"
-#import "UIButton+Position.h"
 #import "NSString+width.h"
 #import "NSString+filterSpaceBlank.h"
-#import "UIButton+backgroundImg.h"
+#import "UIButton+config.h"
 #import "SVProgressHUD.h"

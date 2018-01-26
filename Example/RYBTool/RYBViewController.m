@@ -7,10 +7,10 @@
 //
 
 #import "RYBViewController.h"
-//#import <ToolKit.h>
+#import <ToolKit.h>
 @interface RYBViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *imageView;
 @end
 
 @implementation RYBViewController
@@ -19,7 +19,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.imageView.ttTitle = @"仁医邦";
+    self.imageView.ttTitleColor = [UIColor redColor];
+    self.imageView.ttFont = [UIFont systemFontOfSize:50];
 
 }
 

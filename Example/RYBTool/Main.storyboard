@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,22 +21,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MPr-sW-UZb">
-                                <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="GZq-M1-IMM"/>
-                                    <constraint firstAttribute="width" constant="240" id="TVk-4z-ERN"/>
-                                </constraints>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RpJ-Xj-GZR">
+                                <rect key="frame" x="164.5" y="318" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="MPr-sW-UZb" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="2Ur-dL-m1I"/>
-                            <constraint firstItem="MPr-sW-UZb" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="g6P-8d-nPa"/>
+                            <constraint firstItem="RpJ-Xj-GZR" firstAttribute="centerY" secondItem="TpU-gO-2f1" secondAttribute="centerY" id="68D-3g-j30"/>
+                            <constraint firstItem="RpJ-Xj-GZR" firstAttribute="centerX" secondItem="TpU-gO-2f1" secondAttribute="centerX" id="rMf-zC-yQd"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="MPr-sW-UZb" id="kbU-ra-bk9"/>
+                        <outlet property="imageView" destination="RpJ-Xj-GZR" id="23L-1g-Wew"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
