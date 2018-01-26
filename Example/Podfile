@@ -2,5 +2,4 @@
 
 target 'RYBTool_Example' do
   pod 'ToolKit', :path => '../ToolKit.podspec'
-  pod 'DACircularProgress'
 end

@@ -32,6 +32,10 @@ TODO: Add long description of the pod here.
     notification.source_files = "ToolKit/TTNotificationCenter/**/*.{h,m}"
   end
 
+  s.subspec 'TTDate' do |ttDate|
+    ttDate.source_files = "ToolKit/TTDate/**/*.{h,m}"
+  end
+
   s.resource_bundles = {
      'ToolKit' =>['ToolKit/Assets/*.png', 'ToolKit/Assets/**/*.png', 'ToolKit/Assets/*.gif', 'ToolKit/Assets/*.plist']
    }

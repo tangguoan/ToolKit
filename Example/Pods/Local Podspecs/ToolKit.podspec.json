@@ -46,6 +46,10 @@
     {
       "name": "TTNotification",
       "source_files": "ToolKit/TTNotificationCenter/**/*.{h,m}"
+    },
+    {
+      "name": "TTDate",
+      "source_files": "ToolKit/TTDate/**/*.{h,m}"
     }
   ]
 }
