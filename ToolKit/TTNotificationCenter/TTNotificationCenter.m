@@ -72,6 +72,12 @@ static TTNotificationCenter * share = nil;
     }
 }
 
+- (void)ttDelete:(NSString *)aName{
+    if ([self.keyBlockDictionary.allKeys containsObject:aName]) {
+        [self.keyBlockDictionary removeObjectForKey:aName];
+    }
+}
+
 -(void)sendNotifiMessage:(NSString *)aName notifiInfo:(void (^)(targetObj *, __autoreleasing id *))infoBlock
 {
     id response = nil;

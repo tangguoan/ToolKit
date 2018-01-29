@@ -60,8 +60,6 @@
 	}
 }
 
-
-
 /*标准时间日期描述*/
 -(NSString *)formattedTime{
     NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
@@ -267,6 +265,28 @@
 	NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] - D_MINUTE * dMinutes;
 	NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
 	return newDate;
+}
+
++(NSDate *)dateWithStringWithFormat:(NSString *)foramt andDateString:(NSString *)time;
+{
+    if ([foramt isKindOfClass:[NSString class]] && [time isKindOfClass:[NSString class]]) {
+
+    }else{
+        return [NSDate date];
+    }
+
+    if (foramt.length == 0) {
+        return [NSDate date];
+    }
+
+    if (time.length == 0) {
+        return [NSDate date];
+    }
+
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+//    formatter.locale = [[NSLocale systemLocale] initWithLocaleIdentifier:@"zh_CN"];
+    formatter.dateFormat = foramt;
+    return [formatter dateFromString:time];
 }
 
 #pragma mark Comparing Dates

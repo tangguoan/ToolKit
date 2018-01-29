@@ -36,13 +36,17 @@
 //下几天
 - (NSDate *)nextDays:(NSInteger)days;
 - (NSDate *)backDays:(NSInteger)days;
-+ (NSDate *) dateYesterday;
-+ (NSDate *) dateWithDaysFromNow: (NSInteger) days;
-+ (NSDate *) dateWithDaysBeforeNow: (NSInteger) days;
-+ (NSDate *) dateWithHoursFromNow: (NSInteger) dHours;
-+ (NSDate *) dateWithHoursBeforeNow: (NSInteger) dHours;
-+ (NSDate *) dateWithMinutesFromNow: (NSInteger) dMinutes;
-+ (NSDate *) dateWithMinutesBeforeNow: (NSInteger) dMinutes;
++ (NSDate *)dateYesterday;
++ (NSDate *)dateWithDaysFromNow: (NSInteger) days;
++ (NSDate *)dateWithDaysBeforeNow: (NSInteger) days;
++ (NSDate *)dateWithHoursFromNow: (NSInteger) dHours;
++ (NSDate *)dateWithHoursBeforeNow: (NSInteger) dHours;
++ (NSDate *)dateWithMinutesFromNow: (NSInteger) dMinutes;
++ (NSDate *)dateWithMinutesBeforeNow: (NSInteger) dMinutes;
+
+// foramt 是转化的的格式  yyyy-MM-DD HH:MM    time是具体的时间如: 2013-03-12 12:34
++(NSDate *)dateWithStringWithFormat:(NSString *)foramt andDateString:(NSString *)time;
+
 
 // Comparing dates
 - (BOOL) isEqualToDateIgnoringTime: (NSDate *) aDate;

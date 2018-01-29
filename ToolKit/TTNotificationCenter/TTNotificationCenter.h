@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @class RYBUrlRouter;
-
 @interface targetObj : NSObject
 
 /**
@@ -31,15 +30,14 @@
  可以传进去路由的信息
  */
 @property(nonatomic ,strong) RYBUrlRouter *router;
-
 @end
-
 
 @interface TTNotificationCenter : NSObject
 +(instancetype)shareInstace;
 
-- (void)addObserveNotifi:(NSString *)aName  notifiBlock:(void(^)(targetObj *target, id response))block;
-
+-(void)addObserveNotifi:(NSString *)aName notifiBlock:(void(^)(targetObj *target, id response))block;
 -(void)sendNotifiMessage:(NSString *)aName notifiInfo:(void(^)(targetObj *target, id *response))infoBlock;
 
+//删除要移除对应的block
+-(void)ttDelete:(NSString *)aName;
 @end
