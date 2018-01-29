@@ -17,7 +17,7 @@
 #import "AuthorizationManager.h"
 #import "TTNotificationCenter.h"
 #import "RYBUrlRouter.h"
-#import "NSString+width.h"
+#import "NSString+label.h"
 #import "NSString+filterSpaceBlank.h"
 #import "UIButton+config.h"
 #import "SVProgressHUD.h"

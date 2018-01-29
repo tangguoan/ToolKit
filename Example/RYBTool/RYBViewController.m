@@ -19,10 +19,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.imageView.ttTitle = @"仁医邦";
-    self.imageView.ttTitleColor = [UIColor redColor];
-    self.imageView.ttFont = [UIFont systemFontOfSize:50];
-
+    UILabel *la = [[UILabel alloc]init];
+    la.numberOfLines = 0;
+    la.backgroundColor = [UIColor yellowColor];
+    la.textColor = [UIColor redColor];
+    la.text = @"我是唐国安我是唐国我是唐eeeeee";
+    [self.view addSubview:la];
+    la.frame = CGRectMake(10, 100, 100, [la.text labelOfheightMultilineWithFont:la.font LayoutWidth:100]);
 }
 
 - (void)didReceiveMemoryWarning
