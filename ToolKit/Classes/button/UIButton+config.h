@@ -24,6 +24,10 @@ typedef enum : NSUInteger {
 -(void)setBackImageHighlightedColor:(UIColor *)color;
 - (void)imagePositionStyle:(SGImagePositionStyle)imagePositionStyle spacing:(CGFloat)spacing;
 
+@property (assign, nonatomic,readonly)CGFloat marginSpacing;
+
+@property (assign, nonatomic,readonly)SGImagePositionStyle position;
+
 //当前button的标题
 @property (strong, nonatomic)NSString *ttTitle;
 

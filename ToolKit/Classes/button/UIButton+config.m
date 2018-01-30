@@ -8,9 +8,10 @@
 
 #import "UIButton+config.h"
 #import "UIImage+utils.h"
+#import <objc/runtime.h>
+char margin;
+char type;
 
-static CGFloat marginSpacing = 0;
-static NSInteger Imagetype = NSNotFound;  // 默认的方向不存在
 @implementation UIButton (config)
 -(void)setBackImageNormalColor:(UIColor *)color;{
     UIImage *img = [UIImage fq_imageWithColor:color size:CGSizeMake(1, 1)];
@@ -23,8 +24,8 @@ static NSInteger Imagetype = NSNotFound;  // 默认的方向不存在
 }
 
 - (void)imagePositionStyle:(SGImagePositionStyle)imagePositionStyle spacing:(CGFloat)spacing {
-    marginSpacing = spacing;
-    Imagetype = imagePositionStyle;
+    objc_setAssociatedObject(self, &type, @(imagePositionStyle), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &margin, @(spacing), OBJC_ASSOCIATION_ASSIGN);
     if (imagePositionStyle == SGImagePositionStyleDefault) {
         self.imageEdgeInsets = UIEdgeInsetsMake(0, - 0.5 * spacing, 0, 0.5 * spacing);
         self.titleEdgeInsets = UIEdgeInsetsMake(0, 0.5 * spacing, 0, - 0.5 * spacing);
@@ -53,14 +54,39 @@ static NSInteger Imagetype = NSNotFound;  // 默认的方向不存在
     }
 }
 
+- (SGImagePositionStyle)position
+{
+    NSNumber *nu = objc_getAssociatedObject(self, &type);
+    if ([nu isKindOfClass:[NSNumber class]]) {
+        return nu.integerValue;
+    }
+    return NSNotFound;
+}
+
+- (CGFloat)marginSpacing
+{
+    NSNumber *nu = objc_getAssociatedObject(self, &margin);
+    if ([nu isKindOfClass:[NSNumber class]]) {
+        return nu.floatValue;
+    }
+    return 0;
+}
+
 - (void)setTtTitle:(NSString *)ttTitle{
     [self setTitle:ttTitle forState:UIControlStateNormal];
 }
 
 // TODO 未完成  上下的分析
 - (CGSize)intrinsicContentSize{
+
+//    区分一下是否设置了图片的位置,没有的话就直接返回
+    if (self.position == NSNotFound) {
+        return  [super intrinsicContentSize];
+    }
+
+    CGFloat marginSpacing = self.marginSpacing;
     CGSize size_ = [super intrinsicContentSize];
-    if (Imagetype == SGImagePositionStyleDefault || Imagetype == SGImagePositionStyleRight) {
+    if (self.position == SGImagePositionStyleDefault || self.position == SGImagePositionStyleRight) {
         size_.width = size_.width + marginSpacing;
         return size_;
     }else{
