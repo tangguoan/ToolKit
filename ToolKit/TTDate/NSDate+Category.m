@@ -531,8 +531,7 @@
 #pragma mark 日期的开始~结束 （月，天，年，星期）
 - (NSDate *)beginningOfDay {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    NSDateComponents *components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:self];
-    
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:self];
     return [calendar dateFromComponents:components];
 }
 
@@ -557,7 +556,6 @@
 
 - (NSDate *)endOfWeek {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setWeek:1];
     
@@ -567,16 +565,13 @@
 - (NSDate *)beginningOfMonth {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *components = [calendar components:NSYearCalendarUnit | NSMonthCalendarUnit fromDate:self];
-    
     return [calendar dateFromComponents:components];
 }
 
 - (NSDate *)endOfMonth {
     NSCalendar *calendar = [NSCalendar currentCalendar];
-    
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setMonth:1];
-    
     return [[calendar dateByAddingComponents:components toDate:[self beginningOfMonth] options:0] dateByAddingTimeInterval:-1];
 }
 
@@ -586,7 +581,7 @@
 {
 	NSTimeInterval aTimeInterval = [[NSDate date] timeIntervalSinceReferenceDate] + D_MINUTE * 30;
 	NSDate *newDate = [NSDate dateWithTimeIntervalSinceReferenceDate:aTimeInterval];
-	NSDateComponents *components = [CURRENT_CALENDAR components:NSHourCalendarUnit fromDate:newDate];
+	NSDateComponents *components = [CURRENT_CALENDAR components:NSCalendarUnitHour fromDate:newDate];
 	return components.hour;
 }
 

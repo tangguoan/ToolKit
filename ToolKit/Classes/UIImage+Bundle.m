@@ -12,6 +12,10 @@
 
 +(UIImage *)load_imageNamed:(NSString *)name;
 {
+
+
+    NSBundle *main =  [NSBundle bundleForClass:[self class]];
+
     if (name.length == 0) {
         return nil;
     }

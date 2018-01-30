@@ -9,6 +9,8 @@
 #import "UIButton+config.h"
 #import "UIImage+utils.h"
 
+static CGFloat marginSpacing = 0;
+static NSInteger Imagetype = NSNotFound;  // 默认的方向不存在
 @implementation UIButton (config)
 -(void)setBackImageNormalColor:(UIColor *)color;{
     UIImage *img = [UIImage fq_imageWithColor:color size:CGSizeMake(1, 1)];
@@ -21,6 +23,8 @@
 }
 
 - (void)imagePositionStyle:(SGImagePositionStyle)imagePositionStyle spacing:(CGFloat)spacing {
+    marginSpacing = spacing;
+    Imagetype = imagePositionStyle;
     if (imagePositionStyle == SGImagePositionStyleDefault) {
         self.imageEdgeInsets = UIEdgeInsetsMake(0, - 0.5 * spacing, 0, 0.5 * spacing);
         self.titleEdgeInsets = UIEdgeInsetsMake(0, 0.5 * spacing, 0, - 0.5 * spacing);
@@ -31,6 +35,7 @@
         CGFloat titleOffset = imageW + 0.5 * spacing;
         self.imageEdgeInsets = UIEdgeInsetsMake(0, imageOffset, 0, - imageOffset);
         self.titleEdgeInsets = UIEdgeInsetsMake(0, - titleOffset, 0, titleOffset);
+
     } else if (imagePositionStyle == SGImagePositionStyleTop) {
         CGFloat imageW = self.imageView.frame.size.width;
         CGFloat imageH = self.imageView.frame.size.height;
@@ -52,6 +57,19 @@
     [self setTitle:ttTitle forState:UIControlStateNormal];
 }
 
+// TODO 未完成  上下的分析
+- (CGSize)intrinsicContentSize{
+    CGSize size_ = [super intrinsicContentSize];
+    if (Imagetype == SGImagePositionStyleDefault || Imagetype == SGImagePositionStyleRight) {
+        size_.width = size_.width + marginSpacing;
+        return size_;
+    }else{
+//        size_.height = self.titleLabel.intrinsicContentSize.height  + self.imageView.image.size.height;
+//        size_.width = size_.width - self.imageView.image.size.width;
+        return size_;
+    }
+}
+
 //获得单当前的title
 - (NSString *)ttTitle{
     return self.currentTitle;
@@ -71,5 +89,4 @@
 - (UIColor *)ttTitleColor{
     return self.currentTitleColor;
 }
-
 @end
