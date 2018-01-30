@@ -37,15 +37,15 @@ static NSInteger Imagetype = NSNotFound;  // 默认的方向不存在
         self.titleEdgeInsets = UIEdgeInsetsMake(0, - titleOffset, 0, titleOffset);
 
     } else if (imagePositionStyle == SGImagePositionStyleTop) {
-        CGFloat imageW = self.imageView.frame.size.width;
-        CGFloat imageH = self.imageView.frame.size.height;
+        CGFloat imageW = self.imageView.image.size.width;
+        CGFloat imageH = self.imageView.image.size.height;
         CGFloat titleIntrinsicContentSizeW = self.titleLabel.intrinsicContentSize.width;
         CGFloat titleIntrinsicContentSizeH = self.titleLabel.intrinsicContentSize.height;
         self.imageEdgeInsets = UIEdgeInsetsMake(- titleIntrinsicContentSizeH - spacing, 0, 0, - titleIntrinsicContentSizeW);
-        self.titleEdgeInsets = UIEdgeInsetsMake(0, - imageW, - imageH - spacing, 0);
+        self.titleEdgeInsets = UIEdgeInsetsMake(spacing, -titleIntrinsicContentSizeW - imageW,  -imageH, -titleIntrinsicContentSizeW);
     } else if (imagePositionStyle == SGImagePositionStyleBottom) {
-        CGFloat imageW = self.imageView.frame.size.width;
-        CGFloat imageH = self.imageView.frame.size.height;
+        CGFloat imageW = self.imageView.image.size.width;
+        CGFloat imageH = self.imageView.image.size.height;
         CGFloat titleIntrinsicContentSizeW = self.titleLabel.intrinsicContentSize.width;
         CGFloat titleIntrinsicContentSizeH = self.titleLabel.intrinsicContentSize.height;
         self.imageEdgeInsets = UIEdgeInsetsMake(titleIntrinsicContentSizeH + spacing, 0, 0, - titleIntrinsicContentSizeW);
@@ -64,8 +64,12 @@ static NSInteger Imagetype = NSNotFound;  // 默认的方向不存在
         size_.width = size_.width + marginSpacing;
         return size_;
     }else{
-//        size_.height = self.titleLabel.intrinsicContentSize.height  + self.imageView.image.size.height;
-//        size_.width = size_.width - self.imageView.image.size.width;
+        size_.height = self.titleLabel.intrinsicContentSize.height + self.imageView.image.size.height + marginSpacing;
+        if (self.imageView.image.size.width > self.titleLabel.intrinsicContentSize.width) {
+            size_.width = self.imageView.image.size.width;
+        }else{
+            size_.width = self.titleLabel.intrinsicContentSize.width;
+        }
         return size_;
     }
 }

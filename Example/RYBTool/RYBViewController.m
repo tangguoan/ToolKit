@@ -28,10 +28,13 @@
     [button setImage:[UIImage imageNamed:@"hot"] forState:0];
     [button setTitle:@"woshibiao" forState:0];
 
-    [button imagePositionStyle:SGImagePositionStyleDefault spacing:30];
+    [button imagePositionStyle:SGImagePositionStyleBottom spacing:10];
     [button setTitleColor:[UIColor redColor] forState:0];
     [self.view addSubview:button];
-    [button autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
+    [button autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:50];
+
+    [button autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:100];
+
 }
 
 - (NSDictionary*)getObjectData:(id)obj
