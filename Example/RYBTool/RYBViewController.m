@@ -12,6 +12,8 @@
 #import <objc/runtime.h>
 //#import <UIButton+config.h>
 #import <PureLayout.h>
+#import <NSString+figure.h>
+
 @interface RYBViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *imageView;
 
@@ -22,6 +24,11 @@
 
 - (void)viewDidLoad
 {
+
+    NSLog(@"%@",[NSString decimalPointWithdispose:0 Andoriginalfigure:12687.5583]);
+
+    return;
+
 
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.backgroundColor = [UIColor yellowColor];

@@ -27,4 +27,5 @@
     label.text = self;
     return [label intrinsicContentSize].width;
 }
+
 @end
