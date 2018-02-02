@@ -2,8 +2,8 @@
 //  NSDictionary+TXDataValue.h
 //  BJEducation
 //
-//  Created by heyingj on 11/17/15.
-//  Copyright © 2015 com.bjhl. All rights reserved.
+//  Created by tangguoan on 11/18/15.
+//  Copyright © 2018 com.bjhl. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

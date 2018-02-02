@@ -12,6 +12,10 @@
 
 +(NSString *)decimalPointWithdispose:(int)digit Andoriginalfigure:(CGFloat)figure;
 {
+    if (digit < 0) {
+        NSAssert(NO, @"位数不能是负数,只能是大于0的整数");
+    }
+    
     digit = pow(10,digit);
     figure = round(figure * digit)/digit;
     return @(figure).stringValue;

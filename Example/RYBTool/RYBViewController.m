@@ -13,7 +13,7 @@
 //#import <UIButton+config.h>
 #import <PureLayout.h>
 #import <NSString+figure.h>
-
+#import <NSObject+json.h>
 @interface RYBViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *imageView;
 
@@ -22,25 +22,27 @@
 
 @implementation RYBViewController
 
+
+- (BOOL)isPureFloat:(NSString*)string{
+
+    NSScanner* scan = [NSScanner scannerWithString:string];
+    float val;
+    return[scan scanFloat:&val] && [scan isAtEnd];
+}
+
 - (void)viewDidLoad
 {
 
-    NSLog(@"%@",[NSString decimalPointWithdispose:0 Andoriginalfigure:12687.5583]);
+    NSDictionary *array = @{@"name":@[@"",@"",@(34)]};
 
-    return;
+    NSLog(@"%@",[array objToJson]);
+    [self.imageView addTarget:self action:@selector(qwewqwe) forControlEvents:UIControlEventTouchUpInside];
 
+}
 
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.backgroundColor = [UIColor yellowColor];
-    [button setImage:[UIImage imageNamed:@"hot"] forState:0];
-    [button setTitle:@"woshibiao" forState:0];
+-(void)qwewqwe
+{
 
-    [button imagePositionStyle:SGImagePositionStyleBottom spacing:10];
-    [button setTitleColor:[UIColor redColor] forState:0];
-    [self.view addSubview:button];
-    [button autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:50];
-
-    [button autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:100];
 
 }
 
