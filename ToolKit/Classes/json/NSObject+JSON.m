@@ -34,4 +34,17 @@
 }
 
 
+- (id)jsonToObj{
+    if ([self isKindOfClass:[NSString class]]) {
+        NSString *tmp = (NSString *)self;
+        NSData *date = [tmp dataUsingEncoding:NSUTF8StringEncoding];
+        NSError *error = nil;
+       id obj = [NSJSONSerialization JSONObjectWithData:date options:(NSJSONReadingAllowFragments) error:&error];
+        if (error) {
+            return nil;
+        }
+        return obj;
+    }
+    return nil;
+}
 @end

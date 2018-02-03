@@ -14,4 +14,9 @@
  * 穿进去的是对象
  */
 -(NSString *)objToJson;
+
+/*
+ * json 转化成对象
+ */
+-(id )jsonToObj;
 @end

@@ -33,10 +33,10 @@
 - (void)viewDidLoad
 {
 
-    NSDictionary *array = @{@"name":@[@"",@"",@(34)]};
+    NSArray *array = @{@"name":@[@"",@"",@(34)]};
 
-    NSLog(@"%@",[array objToJson]);
-    [self.imageView addTarget:self action:@selector(qwewqwe) forControlEvents:UIControlEventTouchUpInside];
+    NSLog(@"%@",[[array objToJson] jsonToObj]);
+
 
 }
 
