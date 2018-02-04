@@ -109,7 +109,7 @@
 
 - (NSString *)INTERVALAGO
 {
-    FQDate *now = [FQDate now];
+    TTDate *now = [TTDate now];
     NSTimeInterval interval = [[now date] timeIntervalSinceDate:_date];
     long distance = interval < 0.0f ? 0 : (long)interval;
     
@@ -144,7 +144,7 @@
 
 - (NSString *)minuteDescription
 {
-    FQDate *currentDate = [FQDate now];
+    TTDate *currentDate = [TTDate now];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     
