@@ -1,5 +1,5 @@
 //
-//  TXDate.m
+//  FQDate.m
 //  BJEducation
 //
 //  Created by 唐国安 on 10/30/15.
@@ -7,7 +7,7 @@
 //
 
 #import "TTDate.h"
-
+#import "NSDateFormatter+Category.h"
 @interface TTDate() {
     __strong NSDate *_date;
 }
@@ -18,6 +18,11 @@
 + (instancetype)now
 {
     return [[[self class] alloc] initWithDate:[NSDate date]];
+}
+
++ (instancetype)dateWithDate:(NSDate *)date
+{
+    return [[[self class] alloc]initWithDate:date];
 }
 
 + (instancetype)dateWithMilliseconds:(long long)milliseconds
@@ -52,20 +57,8 @@
 
 + (instancetype)dateWithGreenwichDateString:(NSString *)dateString
 {
-    if (dateString.length == 0) {
-        return nil;
-    }
-    NSDateFormatter* fmt = [[NSDateFormatter alloc] init];
-    [fmt setTimeStyle:NSDateFormatterShortStyle];
-    fmt.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
-    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"Asia/Hong_Kong"];
-    [fmt setTimeZone:timeZone];
-    if ([dateString rangeOfString:@"."].location == NSNotFound) {
-        fmt.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss+08:00";
-    }else{
-        fmt.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS+08:00";
-    }
-    return [[[self class]alloc ]initWithDate:[fmt dateFromString:dateString]];
+    // TODO:
+    return nil;
 }
 
 - (long long)millisecondsSince1970
@@ -89,8 +82,8 @@
 
 - (NSInteger)year
 {
-    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSUInteger unitFlags = NSCalendarUnitYear;
+    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSUInteger unitFlags = NSYearCalendarUnit;
     NSDateComponents *comps = [calendar components:unitFlags fromDate:_date];
     NSInteger year = [comps year];
     return year;
@@ -98,8 +91,8 @@
 
 - (NSInteger)month
 {
-    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSUInteger unitFlags = NSCalendarUnitMonth;
+    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSUInteger unitFlags = NSMonthCalendarUnit;
     NSDateComponents *comps = [calendar components:unitFlags fromDate:_date];
     NSInteger month = [comps month];
     return month;
@@ -107,8 +100,8 @@
 
 - (NSInteger)day
 {
-    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-    NSUInteger unitFlags = NSCalendarUnitDay;
+    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSUInteger unitFlags = NSDayCalendarUnit;
     NSDateComponents *comps = [calendar components:unitFlags fromDate:_date];
     NSInteger day = [comps day];
     return day;
@@ -116,44 +109,57 @@
 
 - (NSString *)INTERVALAGO
 {
-    TTDate *now = [TTDate now];
+    FQDate *now = [FQDate now];
     NSTimeInterval interval = [[now date] timeIntervalSinceDate:_date];
     long distance = interval < 0.0f ? 0 : (long)interval;
     
     NSString *sdate = nil;
-
+    
     /*******************************************************************
-     *  时间显示规则定义（by 20140305）： 定义和下面的代码不匹配
-     *  1）距离现在5*60秒内，显示“刚刚”
-     *  2）距离现在超过5分钟但低于60分钟，显示“几分钟前”
+     *  时间显示规则定义（by 20140305）：
+     *  1）距离现在60秒内，显示“刚刚”
+     *  2）距离现在超过1分钟但低于30分钟，显示“几分钟前”
      *  3）距离现在超过30分钟但在当天内，显示“HH:MM”
      *  4）距离现在已经是前一天的时间但在当年内，显示“MM-DD”
      *  5）再之前的时间，显示“YYYY-MM-DD”
      *******************************************************************/
-    if (distance < 60*5) {
+    if (distance < 60) {
         sdate = @"刚刚";
     }
-    else if (distance <= 60 * 60 && 60*5 <= distance) {
+    else if (distance < 30 * 60) {
         sdate = [NSString stringWithFormat:@"%ld%@", distance / 60, @"分钟前"];
     }
     else if ((distance < 24 * 60 * 60) && ([now day] == [self day])) {
-        sdate = [NSString stringWithFormat:@"%ld%@",distance/60/60,@"小时前"];
-    }else {
-        sdate = [self MM_DD];
+        sdate = [self ENHHMM];
     }
+    else if ([now year] == [self year]) {
+        sdate = [self formatDate:@"MM-dd"];
+    }
+    else {
+        sdate = [self ENYYYYMMDD];
+    }
+    
     return sdate;
 }
 
-
-/**
- 格式是12-30
-
- @return <#return value description#>
- */
--(NSString *)MM_DD{
-
-return [self formatDate:@"MM-dd"];
-
+- (NSString *)minuteDescription
+{
+    FQDate *currentDate = [FQDate now];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    NSString *theDay = [self ENYYYYMMDD];               //日期的年月日
+    NSString *currentDay = [currentDate ENYYYYMMDD];    //当前年月日
+    
+    if ([theDay isEqualToString:currentDay]) {          //今天
+        return [self ENHHMM];
+    } else if (self.year == currentDate.year) {         //今年
+        [dateFormatter setDateFormat:@"MM月dd日 HH:mm"];
+        return [dateFormatter stringFromDate:self.date];
+    } else {                                            //其它年份
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        return [dateFormatter stringFromDate:self.date];
+    }
 }
 
 - (NSString *)CNYYYYMMDDHHMM
@@ -178,12 +184,17 @@ return [self formatDate:@"MM-dd"];
 
 - (NSString *)ENMMDDHHMM
 {
-    return [self formatDate:@"MM月dd日 HH:mm"];
+    return [self formatDate:@"MM-dd HH:mm"];
 }
 
 - (NSString *)CNYYYYMMDD
 {
     return [self formatDate:@"yyyy年MM月dd日"];
+}
+
+- (NSString *)CNMMDD
+{
+    return [self formatDate:@"MM月dd日"];
 }
 
 - (NSString *)ENYYYYMMDD
@@ -206,7 +217,13 @@ return [self formatDate:@"MM-dd"];
     return [self formatDate:@"HH:mm"];
 }
 
+
+- (NSString *)ENEE
+{
+    return [[NSDateFormatter defaultWeek] stringFromDate:_date];
+}
 #pragma mark - private method
+
 
 - (instancetype)initWithDate:(NSDate *)date
 {

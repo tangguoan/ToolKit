@@ -33,9 +33,20 @@
 - (void)viewDidLoad
 {
 
-    NSArray *array = @{@"name":@[@"",@"",@(34)]};
+    NSIndexPath *idx = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath *idx1 = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath *idx2 = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath *idx3 = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath *idx4 = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath *idx5 = [NSIndexPath indexPathForRow:0 inSection:0];
 
-    NSLog(@"%@",[[array objToJson] jsonToObj]);
+    NSIndexPath *idx6 = [NSIndexPath indexPathForRow:0 inSection:0];
+
+    if (idx == idx1) {
+
+        NSLog(@"ddddddd");
+
+    }
 
 
 }
