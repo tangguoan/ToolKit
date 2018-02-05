@@ -17,6 +17,7 @@
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		D91BE5CD7E9CB6862314ABCD /* libPods-RYBTool_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F755CF8947F37C7329240E69 /* libPods-RYBTool_Example.a */; };
+		E20DADC72028033B004C77C6 /* Persion.m in Sources */ = {isa = PBXBuildFile; fileRef = E20DADC62028033B004C77C6 /* Persion.m */; };
 		E28EF29B2020157C00493454 /* hot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E28EF29A2020157C00493454 /* hot@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		A86C4028DB29AC8B008A081E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C3B949CB95A935199542C9B6 /* Pods-RYBTool_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RYBTool_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RYBTool_Tests/Pods-RYBTool_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CF9278AB8720575C3BBA9782 /* ToolKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ToolKit.podspec; path = ../ToolKit.podspec; sourceTree = "<group>"; };
+		E20DADC52028033B004C77C6 /* Persion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Persion.h; sourceTree = "<group>"; };
+		E20DADC62028033B004C77C6 /* Persion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Persion.m; sourceTree = "<group>"; };
 		E28EF29A2020157C00493454 /* hot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hot@2x.png"; sourceTree = "<group>"; };
 		F755CF8947F37C7329240E69 /* libPods-RYBTool_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RYBTool_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -108,6 +111,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* RYBViewController.h */,
 				6003F5A6195388D20070C39A /* RYBViewController.m */,
+				E20DADC52028033B004C77C6 /* Persion.h */,
+				E20DADC62028033B004C77C6 /* Persion.m */,
 				E28EF29A2020157C00493454 /* hot@2x.png */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -297,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E20DADC72028033B004C77C6 /* Persion.m in Sources */,
 				6003F59E195388D20070C39A /* RYBAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* RYBViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

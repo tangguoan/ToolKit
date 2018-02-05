@@ -1,7 +1,7 @@
 //
 //  NSString+width.m
 //
-//  Created by renyibang.com on 15/7/31.
+//  Created by com on 15/7/31.
 //  Copyright (c) 2017年 sczy. All rights reserved.
 //
 
@@ -27,5 +27,4 @@
     label.text = self;
     return [label intrinsicContentSize].width;
 }
-
 @end
