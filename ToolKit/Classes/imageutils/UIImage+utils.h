@@ -58,5 +58,4 @@
 - (UIImage *)fq_imageWithTextMask:(NSAttributedString *)attributedText;
 
 - (UIImage *)fq_roundedRectImageWithSize:(CGSize)size radius:(int)radius;
-
 @end

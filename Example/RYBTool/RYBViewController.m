@@ -18,15 +18,12 @@
 @interface RYBViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *imageView;
 
-
 @end
 
 @implementation RYBViewController
 
-
 - (void)viewDidLoad
 {
-
 
     NSMutableArray * arr = [NSMutableArray array];
     for (NSInteger i =0; i<5; i++) {
@@ -38,9 +35,7 @@
     Persion *p = [Persion new];
     p.name = @"中国人";
     p.students = arr;
-
     NSLog(@"%@",[p getObjToDictionary]);
-
 }
 
 //==================

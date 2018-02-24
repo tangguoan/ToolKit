@@ -6,13 +6,13 @@
 //  Copyright © 2017年 tangguoan. All rights reserved.
 //
 
-#import "AuthorizationManager.h"
+#import "DeviceOfAuthen.h"
 #import <PhotosUI/PhotosUI.h>
 #import "ReactiveCocoa.h"
 #import "SVProgressHUD.h"
-@implementation AuthorizationManager
+@implementation DeviceOfAuthen
 
-+ (void)okPhoto:(void (^)())success failed:(void (^)())fial
++(void)getAuthenPhoto:(void (^)(void))success failed:(void (^)(void))fial
 {
     PHAuthorizationStatus authStatus = [PHPhotoLibrary authorizationStatus];
     if (authStatus == PHAuthorizationStatusNotDetermined ) {
@@ -60,7 +60,7 @@
     }
 }
 
-+ (void)okCamera:(void (^)())success failed:(void (^)())fial
++ (void)getAuthenCamera:(void (^)(void))success failed:(void (^)(void))fial
 {
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (authStatus == PHAuthorizationStatusNotDetermined ) {
@@ -101,7 +101,7 @@
     }    
 }
 
-+ (void)okMicrophone:(void (^)())success failed:(void (^)())fial
++ (void)getAuthenMicrophone:(void (^)(void))success failed:(void (^)(void))fial
 {
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
     if (authStatus == PHAuthorizationStatusNotDetermined) {
