@@ -171,6 +171,25 @@
     return [dayDateFormatter stringFromDate:self];
 }
 
+
+// 格式转化
+-(NSString *)getDateStringFormat:(NSString *)format;
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    formatter.timeZone = [NSTimeZone localTimeZone];
+    formatter.dateFormat = format;
+    return [formatter stringFromDate:self];
+}
+
++ (NSDate *)getDateWithTimeInterval:(NSNumber *)number{
+    if ([number isKindOfClass:[NSNumber class]]) {
+        NSTimeInterval terval = number.doubleValue;
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:terval];
+        return date;
+    }
+    return [NSDate date];
+}
+
 - (NSString *)monthString
 {
     static NSDateFormatter *dayDateFormatter = nil;
@@ -322,7 +341,7 @@
 	NSDateComponents *components2 = [CURRENT_CALENDAR components:DATE_COMPONENTS fromDate:aDate];
 	
 	// Must be same week. 12/31 and 1/1 will both be week "1" if they are in the same week
-	if (components1.week != components2.week) return NO;
+	if (components1.weekOfYear != components2.weekOfYear) return NO;
 	
 	// Must have a time interval under 1 week. Thanks @aclark
 	return (abs([self timeIntervalSinceDate:aDate]) < D_WEEK);

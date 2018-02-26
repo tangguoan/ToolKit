@@ -15,6 +15,7 @@
 #import <NSString+figure.h>
 #import <NSObject+json.h>
 #import "Persion.h"
+#import <NSDate+Category.h>
 @interface RYBViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *imageView;
 
@@ -36,10 +37,13 @@
     p.name = @"中国人";
     p.students = arr;
     NSLog(@"%@",[p getObjToDictionary]);
+    NSString *tmp =  [[NSDate date] getDateStringFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate* nihao =  [NSDate getDateWithTimeInterval:@(100)];
+
+
 }
 
 //==================
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

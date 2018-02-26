@@ -78,6 +78,15 @@
 // string from date
 - (NSString *)dayString;
 - (NSString *)monthString;
+/**
+*format 是时间要转成的那个格式 比如  YYYY-MM 格式
+ */
+-(NSString *)getDateStringFormat:(NSString *)format;
+
+/**
+ *根据时间戳来获取时间点
+ */
++(NSDate *)getDateWithTimeInterval:(NSNumber *)number;
 
 // Date roles
 - (BOOL) isTypicallyWorkday;
@@ -114,5 +123,6 @@
 @property (readonly) NSString *weekdayStr;
 @property (readonly) NSInteger nthWeekday; // e.g. 2nd Tuesday of the month == 2
 @property (readonly) NSInteger year;
+
 
 @end
