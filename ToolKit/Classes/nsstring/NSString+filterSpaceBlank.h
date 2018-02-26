@@ -16,7 +16,7 @@
 
 /**
  过滤掉尾部的空格后返回的文字
- @return
+ @return NSString
  */
 -(NSString *)filterNewWhitespace;
 @end

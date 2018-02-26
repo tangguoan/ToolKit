@@ -14,7 +14,7 @@
 #import "UIImage+Bundle.h"
 #import "NSString+emoji.h"
 #import "UIView+FQKey.h"
-#import "AuthorizationManager.h"
+#import "DeviceOfAuthen.h"
 #import "TTNotificationCenter.h"
 #import "RYBUrlRouter.h"
 #import "NSString+label.h"

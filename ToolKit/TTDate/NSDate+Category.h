@@ -108,7 +108,8 @@
 @property (readonly) NSInteger seconds;
 @property (readonly) NSInteger day;
 @property (readonly) NSInteger month;
-@property (readonly) NSInteger week;
+@property (readonly) NSInteger weekOfYear; // 今天是本年的第几周
+@property (readonly) NSInteger weekOfMonth; // 今天是本月的第几周
 @property (readonly) NSInteger weekday;
 @property (readonly) NSString *weekdayStr;
 @property (readonly) NSInteger nthWeekday; // e.g. 2nd Tuesday of the month == 2
