@@ -11,7 +11,7 @@
   */
 
 #import "NSDate+Category.h"
-#import "NSDateFormatter+Category.h"
+//#import "NSDateFormatter+Category.h"
 
 #define DATE_COMPONENTS (NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekOfYear |  NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond | NSCalendarUnitWeekday | NSCalendarUnitWeekdayOrdinal)
 #define CURRENT_CALENDAR [NSCalendar currentCalendar]
@@ -31,7 +31,7 @@
 	} else if (timeInterval < 2592000) {//30天内
         return [NSString stringWithFormat:@"%.f天前", timeInterval / 86400];
     } else if (timeInterval < 31536000) {//30天至1年内
-        NSDateFormatter *dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"M月d日"];
+        NSDateFormatter *dateFormatter = [self dateFormatterWithFormat:@"M月d日"];
         return [dateFormatter stringFromDate:self];
     } else {
         return [NSString stringWithFormat:@"%.f年前", timeInterval / 31536000];
@@ -41,7 +41,7 @@
 /*精确到分钟的日期描述*/
 - (NSString *)minuteDescription
 {
-    NSDateFormatter *dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"yyyy-MM-dd"];
+    NSDateFormatter *dateFormatter = [self dateFormatterWithFormat:@"yyyy-MM-dd"];
     
 	NSString *theDay = [dateFormatter stringFromDate:self];//日期的年月日
 	NSString *currentDay = [dateFormatter stringFromDate:[NSDate date]];//当前年月日
@@ -81,33 +81,30 @@
     
     if (!hasAMPM) { //24小时制
         if (hour <= 24 && hour >= 0) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"HH:mm"];
+            dateFormatter = [self dateFormatterWithFormat:@"HH:mm"];
         }else if (hour < 0 && hour >= -24) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"昨天HH:mm"];
+            dateFormatter = [self dateFormatterWithFormat:@"昨天HH:mm"];
         }else {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"yyyy-MM-dd"];
+            dateFormatter = [self dateFormatterWithFormat:@"yyyy-MM-dd"];
         }
     }else {
         if (hour >= 0 && hour <= 6) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"凌晨hh:mm"];
+            dateFormatter = [self dateFormatterWithFormat:@"凌晨hh:mm"];
         }else if (hour > 6 && hour <=11 ) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"上午hh:mm"];
+            dateFormatter = [self dateFormatterWithFormat:@"上午hh:mm"];
         }else if (hour > 11 && hour <= 17) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"下午hh:mm"];
+            dateFormatter = [self dateFormatterWithFormat:@"下午hh:mm"];
         }else if (hour > 17 && hour <= 24) {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"晚上hh:mm"];
+            dateFormatter = [self dateFormatterWithFormat:@"晚上hh:mm"];
         }else if (hour < 0 && hour >= -24){
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"昨天HH:mm"];
+            dateFormatter = [self dateFormatterWithFormat:@"昨天HH:mm"];
         }else  {
-            dateFormatter = [NSDateFormatter dateFormatterWithFormat:@"yyyy-MM-dd"];
+            dateFormatter = [self dateFormatterWithFormat:@"yyyy-MM-dd"];
         }
-        
     }
-    
     ret = [dateFormatter stringFromDate:self];
     return ret;
 }
-
 
 /*格式化日期描述*/
 - (NSString *)formattedDateDescription
@@ -666,7 +663,22 @@
 
  -(NSString *)weekdayStr
 {
-    NSString* dateString = [[NSDateFormatter defaultWeek] stringFromDate:self];
+    NSString* dateString = [[self defaultWeek] stringFromDate:self];
     return dateString;
+}
+
+
+- (NSDateFormatter *) defaultWeek
+{
+     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.shortWeekdaySymbols = @[@"周日",@"周一",@"周二",@"周三",@"周四",@"周五",@"周六"];
+    dateFormatter.dateFormat = @"EE";
+    return dateFormatter;
+}
+
+-(NSDateFormatter *)dateFormatterWithFormat:(NSString *)format{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = format;
+    return dateFormatter;
 }
 @end

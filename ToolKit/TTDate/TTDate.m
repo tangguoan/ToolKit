@@ -7,7 +7,6 @@
 //
 
 #import "TTDate.h"
-#import "NSDateFormatter+Category.h"
 @interface TTDate() {
     __strong NSDate *_date;
 }
@@ -82,8 +81,8 @@
 
 - (NSInteger)year
 {
-    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSUInteger unitFlags = NSYearCalendarUnit;
+    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSUInteger unitFlags = NSCalendarUnitYear;
     NSDateComponents *comps = [calendar components:unitFlags fromDate:_date];
     NSInteger year = [comps year];
     return year;
@@ -91,8 +90,8 @@
 
 - (NSInteger)month
 {
-    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSUInteger unitFlags = NSMonthCalendarUnit;
+    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSUInteger unitFlags = NSCalendarUnitMonth;
     NSDateComponents *comps = [calendar components:unitFlags fromDate:_date];
     NSInteger month = [comps month];
     return month;
@@ -100,8 +99,8 @@
 
 - (NSInteger)day
 {
-    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSUInteger unitFlags = NSDayCalendarUnit;
+    NSCalendar* calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSUInteger unitFlags = NSCalendarUnitDay;
     NSDateComponents *comps = [calendar components:unitFlags fromDate:_date];
     NSInteger day = [comps day];
     return day;
@@ -220,9 +219,17 @@
 
 - (NSString *)ENEE
 {
-    return [[NSDateFormatter defaultWeek] stringFromDate:_date];
+    return [[self defaultWeek] stringFromDate:_date];
 }
 #pragma mark - private method
+
+- (NSDateFormatter *) defaultWeek
+{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.shortWeekdaySymbols = @[@"周日",@"周一",@"周二",@"周三",@"周四",@"周五",@"周六"];
+    dateFormatter.dateFormat = @"EE";
+    return dateFormatter;
+}
 
 
 - (instancetype)initWithDate:(NSDate *)date
