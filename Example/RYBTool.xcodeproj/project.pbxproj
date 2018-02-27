@@ -19,6 +19,7 @@
 		D91BE5CD7E9CB6862314ABCD /* libPods-RYBTool_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F755CF8947F37C7329240E69 /* libPods-RYBTool_Example.a */; };
 		E20DADC72028033B004C77C6 /* Persion.m in Sources */ = {isa = PBXBuildFile; fileRef = E20DADC62028033B004C77C6 /* Persion.m */; };
 		E28EF29B2020157C00493454 /* hot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E28EF29A2020157C00493454 /* hot@2x.png */; };
+		E2A1BD95204505F100754B3D /* otherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2A1BD94204505F100754B3D /* otherViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		E20DADC52028033B004C77C6 /* Persion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Persion.h; sourceTree = "<group>"; };
 		E20DADC62028033B004C77C6 /* Persion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Persion.m; sourceTree = "<group>"; };
 		E28EF29A2020157C00493454 /* hot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hot@2x.png"; sourceTree = "<group>"; };
+		E2A1BD93204505F100754B3D /* otherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = otherViewController.h; sourceTree = "<group>"; };
+		E2A1BD94204505F100754B3D /* otherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = otherViewController.m; sourceTree = "<group>"; };
 		F755CF8947F37C7329240E69 /* libPods-RYBTool_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RYBTool_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -111,6 +114,8 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* RYBViewController.h */,
 				6003F5A6195388D20070C39A /* RYBViewController.m */,
+				E2A1BD93204505F100754B3D /* otherViewController.h */,
+				E2A1BD94204505F100754B3D /* otherViewController.m */,
 				E20DADC52028033B004C77C6 /* Persion.h */,
 				E20DADC62028033B004C77C6 /* Persion.m */,
 				E28EF29A2020157C00493454 /* hot@2x.png */,
@@ -305,6 +310,7 @@
 				E20DADC72028033B004C77C6 /* Persion.m in Sources */,
 				6003F59E195388D20070C39A /* RYBAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* RYBViewController.m in Sources */,
+				E2A1BD95204505F100754B3D /* otherViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

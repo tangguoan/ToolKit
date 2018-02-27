@@ -60,38 +60,59 @@ static TTNotificationCenter * share = nil;
     return share;
 }
 
--(void)addObserveNotifi:(NSString *)aName notifiBlock:(void (^)(targetObj *, id))block
+// 把block放到数组中去进行保存;
+-(void)addObserverNotifi:(id)observer name:(NSString *)aName notifiBlock:(void (^)(targetObj *, id))obj
 {
-    NSMutableArray *arrayBlock = [self.keyBlockDictionary valueForKey:aName];
-    if (block) {
-        if (arrayBlock == nil) {
-            arrayBlock = [NSMutableArray array];
-            [self.keyBlockDictionary setObject:arrayBlock forKey:aName];
+    NSMutableDictionary *dicBlock = [self.keyBlockDictionary valueForKey:aName];
+    if (dicBlock == nil) {
+        dicBlock = [NSMutableDictionary dictionary];
+        [self.keyBlockDictionary setObject:dicBlock forKey:aName];
+    }
+    [dicBlock setValue:obj forKey:[self changeAddress:observer]];
+}
+
+
+// 移除对象的block回调
+- (void)ttDelete:(id)observer{
+    NSArray <NSMutableDictionary *>*value = self.keyBlockDictionary.allValues;
+    [value enumerateObjectsUsingBlock:^(NSMutableDictionary * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSArray *otherValue = obj.allKeys;
+        NSString *key = [self changeAddress:observer];
+        if ([otherValue containsObject:key]) {
+            [obj removeObjectForKey:key];
+            *stop = YES;
         }
-        [arrayBlock addObject:block];
-    }
+    }];
 }
 
-- (void)ttDelete:(NSString *)aName{
-    if ([self.keyBlockDictionary.allKeys containsObject:aName]) {
-        [self.keyBlockDictionary removeObjectForKey:aName];
-    }
-}
-
--(void)sendNotifiMessage:(NSString *)aName notifiInfo:(void (^)(targetObj *, __autoreleasing id *))infoBlock
+-(void)sendNotifiName:(NSString *)aName notifiInfo:(void (^)(targetObj *, __autoreleasing id *))obj
 {
     id response = nil;
-    NSMutableArray *array = [self.keyBlockDictionary objectForKey:aName];
-    targetObj *obj = nil;
-    if (infoBlock) {
-        obj = [targetObj new];
-        infoBlock(obj, &response);
+    NSMutableDictionary *dictionary = [self.keyBlockDictionary objectForKey:aName];
+    targetObj *target = nil;
+    if (obj) {
+        target = [targetObj new];
+        obj(target, &response);
     }
-    for (void (^block)(targetObj *, __autoreleasing id ) in array) {
+
+//    去循环得到的保存对象的block 然后执行block传递参数值
+    NSArray *value = dictionary.allValues;
+    for (void (^block)(targetObj *, __autoreleasing id ) in value) {
         if (block) {
-            block(obj,response);
+            block(target,response);
         }
     }
+}
+
+// 把对象转化成ip地址字符串化
+-(NSString *)changeAddress:(id)ip
+{
+//    __weak id tmp = ip;
+//    if (tmp == nil) {
+//        return @"";
+//    }
+    NSString *address = [NSString stringWithFormat:@"%p",ip];
+    return address;
 }
 
 #pragma mark set get

@@ -16,6 +16,7 @@
 #import <NSObject+json.h>
 #import "Persion.h"
 #import <NSDate+Category.h>
+#import "otherViewController.h"
 @interface RYBViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *imageView;
 
@@ -26,23 +27,18 @@
 - (void)viewDidLoad
 {
 
-    NSMutableArray * arr = [NSMutableArray array];
-    for (NSInteger i =0; i<5; i++) {
-        Persion *p = [Persion new];
-        [p setValue:@(i) forKey:@"height"];
-        p.name = @"唐国安";
-        [arr addObject:p];
-    }
-    Persion *p = [Persion new];
-    p.name = @"中国人";
-    p.students = arr;
-    NSLog(@"%@",[p getObjToDictionary]);
-    NSString *tmp =  [[NSDate date] getDateStringFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate* nihao =  [NSDate getDateWithTimeInterval:@(100)];
-
-
+    [self.imageView addTarget:self action:@selector(nihao) forControlEvents:UIControlEventTouchUpInside];
 }
 
+
+-(void)nihao
+{
+    otherViewController *other = [otherViewController new];
+    [self presentViewController:other animated:YES completion:^{
+
+    }];
+
+}
 //==================
 - (void)didReceiveMemoryWarning
 {

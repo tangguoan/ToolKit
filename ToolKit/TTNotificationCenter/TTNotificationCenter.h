@@ -32,12 +32,22 @@
 @property(nonatomic ,strong) RYBUrlRouter *router;
 @end
 
+/***
+ *1创建此类的目的是为了 减少使用系统的通知忘记移除而引起的崩溃
+ *2此类更容易传递各种参数
+ *3需要在同一个线程中使用,避免出现异常问题
+ *4模仿系统的通知
+*/
+
 @interface TTNotificationCenter : NSObject
 +(instancetype)shareInstace;
 
--(void)addObserveNotifi:(NSString *)aName notifiBlock:(void(^)(targetObj *target, id response))block;
--(void)sendNotifiMessage:(NSString *)aName notifiInfo:(void(^)(targetObj *target, id *response))infoBlock;
-
+/**
+ *  obj 的block 会对里面的self和其他值进行强引用
+ */
+-(void)addObserverNotifi:(id)observer name:(NSString *)aName notifiBlock:(void(^)(targetObj *target, id response))obj;
+-(void)sendNotifiName:(NSString *)aName notifiInfo:(void(^)(targetObj *target, id *response))obj;
 //删除要移除对应的block
--(void)ttDelete:(NSString *)aName;
+-(void)ttDelete:(id)observer;
+
 @end
