@@ -19,9 +19,6 @@
         UIAlertView *alter = [[UIAlertView alloc]initWithTitle:nil message:@"是否获取权限,否则无法使用相册照片" delegate:self cancelButtonTitle:nil otherButtonTitles:@"取消",@"确定", nil];
         [alter.rac_buttonClickedSignal subscribeNext:^(NSNumber *x) {
             if (x.integerValue == 0) {
-                //                if (fial) {
-                //                    fial();
-                //                }
                 [SVProgressHUD showInfoWithStatus:@"请允许获取相册权限"];
             }else{
                 PHAuthorizationStatus authStatus = [PHPhotoLibrary authorizationStatus];
@@ -52,7 +49,6 @@
             fial();
         }
     }
-    
     if (authStatus == PHAuthorizationStatusAuthorized) {
         if (success) {
             success();
@@ -67,9 +63,6 @@
         UIAlertView *alter = [[UIAlertView alloc]initWithTitle:nil message:@"是否获取权限,否则无法使用照相机" delegate:nil cancelButtonTitle:nil otherButtonTitles:@"取消",@"确定", nil];
         [alter.rac_buttonClickedSignal subscribeNext:^(NSNumber *x) {
             if (x.integerValue == 0) {
-                //                if (fial) {
-                //                    fial();
-                //                }
                 [SVProgressHUD showInfoWithStatus:@"请允许获取照相机权限"];
             }else{
                 [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
