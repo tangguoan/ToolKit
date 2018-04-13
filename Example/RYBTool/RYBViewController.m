@@ -26,20 +26,6 @@
 - (void)viewDidLoad
 {
 
-    NSMutableArray * arr = [NSMutableArray array];
-    for (NSInteger i =0; i<5; i++) {
-        Persion *p = [Persion new];
-        [p setValue:@(i) forKey:@"height"];
-        p.name = @"唐国安";
-        [arr addObject:p];
-    }
-    Persion *p = [Persion new];
-    p.name = @"中国人";
-    p.students = arr;
-    NSLog(@"%@",[p getObjToDictionary]);
-    NSString *tmp =  [[NSDate date] getDateStringFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate* nihao =  [NSDate getDateWithTimeInterval:@(100)];
-
 
 }
 
