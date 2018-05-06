@@ -10,7 +10,7 @@
 #import <ToolKit.h>
 #import <ToolKit/UIImage+Bundle.h>
 #import <objc/runtime.h>
-//#import <UIButton+config.h>
+#import <UIButton+config.h>
 #import <PureLayout.h>
 #import <NSString+figure.h>
 #import <NSObject+json.h>
@@ -26,7 +26,11 @@
 - (void)viewDidLoad
 {
 
-
+    UIImage *img = [UIImage imageNamed:@"hot"];
+    img = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [self.imageView setImage:img forState:UIControlStateNormal];
+    [self.imageView imagePositionStyle:SGImagePositionStyleRight spacing:7];
+    
 }
 
 //==================
