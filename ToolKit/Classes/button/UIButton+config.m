@@ -24,8 +24,8 @@ char type;
 }
 
 - (void)imagePositionStyle:(SGImagePositionStyle)imagePositionStyle spacing:(CGFloat)spacing {
-    objc_setAssociatedObject(self, &type, @(imagePositionStyle), OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, &margin, @(spacing), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &type, @(imagePositionStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &margin, @(spacing), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (imagePositionStyle == SGImagePositionStyleDefault) {
         self.imageEdgeInsets = UIEdgeInsetsMake(0, - 0.5 * spacing, 0, 0.5 * spacing);
         self.titleEdgeInsets = UIEdgeInsetsMake(0, 0.5 * spacing, 0, - 0.5 * spacing);
