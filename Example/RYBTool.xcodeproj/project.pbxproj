@@ -183,7 +183,6 @@
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				9DA0E28137CC5229A755803A /* [CP] Embed Pods Frameworks */,
 				56A0B0BE3E7F5D27D08FE43F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -269,30 +268,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RYBTool_Example/Pods-RYBTool_Example-resources.sh",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-				$PODS_CONFIGURATION_BUILD_DIR/ToolKit/ToolKit.bundle,
+				"${PODS_CONFIGURATION_BUILD_DIR}/ToolKit/ToolKit.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ToolKit.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RYBTool_Example/Pods-RYBTool_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9DA0E28137CC5229A755803A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RYBTool_Example/Pods-RYBTool_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

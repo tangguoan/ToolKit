@@ -16,6 +16,8 @@
 #import <NSObject+json.h>
 #import "Persion.h"
 #import <NSDate+Category.h>
+#import <UIView+finView.h>
+
 @interface RYBViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *imageView;
 
@@ -26,8 +28,18 @@
 - (void)viewDidLoad
 {
 
-
+    UIView *wq = [[UIView alloc]init];
+    for (NSInteger i = 0 ; i<17; i++) {
+        UISwitch *s =  [UISwitch new];
+        [wq addSubview:s];
+        if (i % 3 == 0) {
+            s.tag = 3;
+        }
+    }
+    NSArray *views = [wq findTargetViewWithTag:3];
+    
 }
+
 
 //==================
 - (void)didReceiveMemoryWarning
@@ -35,5 +47,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end
