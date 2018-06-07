@@ -9,6 +9,7 @@
 #import "UIButton+config.h"
 #import "UIImage+utils.h"
 #import <objc/runtime.h>
+
 char margin;
 char type;
 
@@ -24,8 +25,8 @@ char type;
 }
 
 - (void)imagePositionStyle:(SGImagePositionStyle)imagePositionStyle spacing:(CGFloat)spacing {
-    objc_setAssociatedObject(self, &type, @(imagePositionStyle), OBJC_ASSOCIATION_ASSIGN);
-    objc_setAssociatedObject(self, &margin, @(spacing), OBJC_ASSOCIATION_ASSIGN);
+    objc_setAssociatedObject(self, &type, @(imagePositionStyle), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &margin, @(spacing), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (imagePositionStyle == SGImagePositionStyleDefault) {
         self.imageEdgeInsets = UIEdgeInsetsMake(0, - 0.5 * spacing, 0, 0.5 * spacing);
         self.titleEdgeInsets = UIEdgeInsetsMake(0, 0.5 * spacing, 0, - 0.5 * spacing);
@@ -36,21 +37,6 @@ char type;
         CGFloat titleOffset = imageW + 0.5 * spacing;
         self.imageEdgeInsets = UIEdgeInsetsMake(0, imageOffset, 0, - imageOffset);
         self.titleEdgeInsets = UIEdgeInsetsMake(0, - titleOffset, 0, titleOffset);
-
-    } else if (imagePositionStyle == SGImagePositionStyleTop) {
-        CGFloat imageW = self.imageView.image.size.width;
-        CGFloat imageH = self.imageView.image.size.height;
-        CGFloat titleIntrinsicContentSizeW = self.titleLabel.intrinsicContentSize.width;
-        CGFloat titleIntrinsicContentSizeH = self.titleLabel.intrinsicContentSize.height;
-        self.imageEdgeInsets = UIEdgeInsetsMake(- titleIntrinsicContentSizeH - spacing, 0, 0, - titleIntrinsicContentSizeW);
-        self.titleEdgeInsets = UIEdgeInsetsMake(spacing, -titleIntrinsicContentSizeW - imageW,  -imageH, -titleIntrinsicContentSizeW);
-    } else if (imagePositionStyle == SGImagePositionStyleBottom) {
-        CGFloat imageW = self.imageView.image.size.width;
-        CGFloat imageH = self.imageView.image.size.height;
-        CGFloat titleIntrinsicContentSizeW = self.titleLabel.intrinsicContentSize.width;
-        CGFloat titleIntrinsicContentSizeH = self.titleLabel.intrinsicContentSize.height;
-        self.imageEdgeInsets = UIEdgeInsetsMake(titleIntrinsicContentSizeH + spacing, 0, 0, - titleIntrinsicContentSizeW);
-        self.titleEdgeInsets = UIEdgeInsetsMake(0, - imageW, imageH + spacing, 0);
     }
 }
 
@@ -76,28 +62,14 @@ char type;
     [self setTitle:ttTitle forState:UIControlStateNormal];
 }
 
-// TODO 未完成  上下的分析
+
 - (CGSize)intrinsicContentSize{
-
-//    区分一下是否设置了图片的位置,没有的话就直接返回
-    if (self.position == NSNotFound) {
-        return  [super intrinsicContentSize];
-    }
-
     CGFloat marginSpacing = self.marginSpacing;
     CGSize size_ = [super intrinsicContentSize];
     if (self.position == SGImagePositionStyleDefault || self.position == SGImagePositionStyleRight) {
         size_.width = size_.width + marginSpacing;
-        return size_;
-    }else{
-        size_.height = self.titleLabel.intrinsicContentSize.height + self.imageView.image.size.height + marginSpacing;
-        if (self.imageView.image.size.width > self.titleLabel.intrinsicContentSize.width) {
-            size_.width = self.imageView.image.size.width;
-        }else{
-            size_.width = self.titleLabel.intrinsicContentSize.width;
-        }
-        return size_;
     }
+    return size_;
 }
 
 //获得单当前的title

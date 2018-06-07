@@ -10,7 +10,7 @@
 #import <ToolKit.h>
 #import <ToolKit/UIImage+Bundle.h>
 #import <objc/runtime.h>
-//#import <UIButton+config.h>
+#import <UIButton+config.h>
 #import <PureLayout.h>
 #import <NSString+figure.h>
 #import <NSObject+json.h>
@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad
 {
+
 
     UIView *wq = [[UIView alloc]init];
     for (NSInteger i = 0 ; i<17; i++) {

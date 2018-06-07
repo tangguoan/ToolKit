@@ -13,10 +13,6 @@ typedef enum : NSUInteger {
     SGImagePositionStyleDefault,
     /// 图片在右，文字在左
     SGImagePositionStyleRight,
-    /// 图片在上，文字在下
-    SGImagePositionStyleTop,
-    /// 图片在下，文字在上
-    SGImagePositionStyleBottom,
 } SGImagePositionStyle;
 
 @interface UIButton(config)
