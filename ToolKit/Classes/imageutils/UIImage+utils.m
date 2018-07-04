@@ -228,8 +228,6 @@ static CGFloat edgeSizeFromCornerRadius(CGFloat cornerRadius) {
     return returnImage;
 }
 
-
-
 - (UIImage *)fq_imageByApplyingAlpha:(CGFloat)alpha {
     if (alpha < 0.0f || alpha > 1.0f) {
         alpha = 0.5f;

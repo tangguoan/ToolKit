@@ -28,9 +28,13 @@ PODS:
     - ReactiveCocoa (~> 2.5)
     - SDWebImage
     - SVProgressHUD (~> 2.0.2)
+  - UMCAnalytics (5.5.0):
+    - UMCCommon
+  - UMCCommon (1.5.1)
 
 DEPENDENCIES:
   - ToolKit (from `../ToolKit.podspec`)
+  - UMCAnalytics (~> 5.5.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -38,6 +42,8 @@ SPEC REPOS:
     - ReactiveCocoa
     - SDWebImage
     - SVProgressHUD
+    - UMCAnalytics
+    - UMCCommon
 
 EXTERNAL SOURCES:
   ToolKit:
@@ -49,7 +55,9 @@ SPEC CHECKSUMS:
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
   ToolKit: 82d4cd6b756693fc98fbe712f436a14a9589ff7a
+  UMCAnalytics: 4667788559a72f2fa5077117d1b8802a3b6eb6bb
+  UMCCommon: 16b674e9de0616d3a6128c551348a686d869c3c7
 
-PODFILE CHECKSUM: d3e56658b9aadf1668c103f6b0808449e5c9c892
+PODFILE CHECKSUM: f780937fcd381f1c0dd1b7f9a849973b4fcc03f8
 
 COCOAPODS: 1.5.0

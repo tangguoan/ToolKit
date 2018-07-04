@@ -2,4 +2,6 @@
 
 target 'RYBTool_Example' do
   pod 'ToolKit', :path => '../ToolKit.podspec'
+   pod 'UMCAnalytics', '~> 5.5.0'
+
 end

@@ -14,37 +14,81 @@
 #import <PureLayout.h>
 #import <NSString+figure.h>
 #import <NSObject+json.h>
-#import "Persion.h"
 #import <NSDate+Category.h>
 #import <UIView+finView.h>
+#import "Stack.h"
+
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
+#import <UIView+fromNib.h>
+#import "RYBeee.h"
 
 @interface RYBViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *field;
+@property (strong, nonatomic) NSString *tmp;
 
+@property( strong, nonatomic) Stack *model;
 @end
 
 @implementation RYBViewController
 
 - (void)viewDidLoad
 {
-
-
-    UIView *wq = [[UIView alloc]init];
-    for (NSInteger i = 0 ; i<17; i++) {
-        UISwitch *s =  [UISwitch new];
-        [wq addSubview:s];
-        if (i % 3 == 0) {
-            s.tag = 3;
-        }
-    }
-    NSArray *views = [wq findTargetViewWithTag:3];
+   
+    [RYBeee initFromNib];
     
+    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+            
+            [subscriber sendNext:@"我是唐国安"];
+            NSError *err = [NSError errorWithDomain:@"eeeee" code:345 userInfo:@{}];
+            [subscriber sendError:err];
+            [subscriber sendCompleted];
+            
+            return [RACDisposable disposableWithBlock:^{
+                
+            }];
+        }];
+    }];
+    
+    
+    [command.executionSignals subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@", x);
+    }];
+    [command.errors subscribeNext:^(NSError * _Nullable x) {
+        NSLog(@"%@", x);
+    }];
+    [command execute:@1];
+    
+    
+
+    
+    
+    
+    NSDictionary *dict = @{@"name":@"xmg",@"age":@18};
+    [dict.rac_sequence.signal subscribeNext:^(RACTuple *x) {
+        
+        // 解包元组，会把元组的值，按顺序给参数里面的变量赋值
+        RACTupleUnpack(NSString *key,NSString *value) = x;
+        
+        // 相当于以下写法
+        //        NSString *key = x[0];
+        //        NSString *value = x[1];
+        
+        NSLog(@"%@ %@",key,value);
+        
+    }];
 }
 
 
-//==================
-- (void)didReceiveMemoryWarning
-{
+-(void)nihao{
+//    NSLog(@"%@",self.model.name);
+//    self.model.name = @"tangguoan";
+}
+
+#pragma mark - dddd
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
