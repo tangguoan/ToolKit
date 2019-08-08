@@ -13,22 +13,16 @@
 @implementation NSDictionary (JK)
 
 + (void)load {
+    Method originalMethod = class_getInstanceMethod([NSDictionary class], @selector(moa_dictionaryWithObjects:forKeys:count:));
+    Class aCl = NSClassFromString(@"__NSPlaceholderDictionary");
+    SEL s = NSSelectorFromString(@"initWithObjects:forKeys:count:");
+//        id tmp = [aCl performSelector:s];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-     
-        Method originalMethod = class_getInstanceMethod([NSDictionary class], @selector(moa_dictionaryWithObjects:forKeys:count:));
-        
-        Class aCl = NSClassFromString(@"__NSPlaceholderDictionary");
-        
-        SEL s = NSSelectorFromString(@"initWithObjects:forKeys:count:");
-        
-        id tmp = [aCl performSelector:s];
-        Method swizzledMethod = class_getInstanceMethod(aCl, s);
-         method_exchangeImplementations(originalMethod, swizzledMethod);
-        
-//        NSLog(@"是否交换  %ld",b);
-    });
     
+    
+    
+    Method swizzledMethod = class_getInstanceMethod(aCl, s);
+    method_exchangeImplementations(originalMethod, swizzledMethod);
 }
 
 

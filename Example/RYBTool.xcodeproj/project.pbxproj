@@ -17,10 +17,10 @@
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		D91BE5CD7E9CB6862314ABCD /* libPods-RYBTool_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F755CF8947F37C7329240E69 /* libPods-RYBTool_Example.a */; };
-		E208CF1B20C92C150014FC23 /* UIButton+height.m in Sources */ = {isa = PBXBuildFile; fileRef = E208CF1A20C92C150014FC23 /* UIButton+height.m */; };
-		E208CF1E20CA180A0014FC23 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = E208CF1D20CA180A0014FC23 /* Stack.m */; };
-		E2132C4320EC6D45002B3D2D /* RYBeee.m in Sources */ = {isa = PBXBuildFile; fileRef = E2132C4220EC6D45002B3D2D /* RYBeee.m */; };
-		E2132C4520EC6E3A002B3D2D /* RYBeee.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2132C4420EC6E3A002B3D2D /* RYBeee.xib */; };
+		E22D38A922F9CE2200D6679F /* tmp_doctor.txt in Resources */ = {isa = PBXBuildFile; fileRef = E22D38A822F9CE2200D6679F /* tmp_doctor.txt */; };
+		E22D38AC22F9CE6100D6679F /* RYBUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = E22D38AB22F9CE6100D6679F /* RYBUrl.m */; };
+		E248E89922EED0E000AB1697 /* qwe.txt in Resources */ = {isa = PBXBuildFile; fileRef = E248E89822EED0E000AB1697 /* qwe.txt */; };
+		E248E89B22EED51D00AB1697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E248E89A22EED51D00AB1697 /* LaunchScreen.storyboard */; };
 		E28EF29B2020157C00493454 /* hot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E28EF29A2020157C00493454 /* hot@2x.png */; };
 /* End PBXBuildFile section */
 
@@ -51,14 +51,12 @@
 		9B2A6A017CB98EC9C17F3D4D /* Pods_RYBTool_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RYBTool_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A86C4028DB29AC8B008A081E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C3B949CB95A935199542C9B6 /* Pods-RYBTool_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RYBTool_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RYBTool_Tests/Pods-RYBTool_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		CF9278AB8720575C3BBA9782 /* ToolKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ToolKit.podspec; path = ../ToolKit.podspec; sourceTree = "<group>"; };
-		E208CF1920C92C150014FC23 /* UIButton+height.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+height.h"; sourceTree = "<group>"; };
-		E208CF1A20C92C150014FC23 /* UIButton+height.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+height.m"; sourceTree = "<group>"; };
-		E208CF1C20CA180A0014FC23 /* Stack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
-		E208CF1D20CA180A0014FC23 /* Stack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
-		E2132C4120EC6D45002B3D2D /* RYBeee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYBeee.h; sourceTree = "<group>"; };
-		E2132C4220EC6D45002B3D2D /* RYBeee.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYBeee.m; sourceTree = "<group>"; };
-		E2132C4420EC6E3A002B3D2D /* RYBeee.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RYBeee.xib; sourceTree = "<group>"; };
+		CF9278AB8720575C3BBA9782 /* ToolKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ToolKit.podspec; path = ../ToolKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E22D38A822F9CE2200D6679F /* tmp_doctor.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tmp_doctor.txt; sourceTree = "<group>"; };
+		E22D38AA22F9CE6100D6679F /* RYBUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYBUrl.h; sourceTree = "<group>"; };
+		E22D38AB22F9CE6100D6679F /* RYBUrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYBUrl.m; sourceTree = "<group>"; };
+		E248E89822EED0E000AB1697 /* qwe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = qwe.txt; sourceTree = "<group>"; };
+		E248E89A22EED51D00AB1697 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E28EF29A2020157C00493454 /* hot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hot@2x.png"; sourceTree = "<group>"; };
 		F755CF8947F37C7329240E69 /* libPods-RYBTool_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RYBTool_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,16 +114,12 @@
 			children = (
 				6003F59C195388D20070C39A /* RYBAppDelegate.h */,
 				6003F59D195388D20070C39A /* RYBAppDelegate.m */,
+				E22D38AA22F9CE6100D6679F /* RYBUrl.h */,
+				E22D38AB22F9CE6100D6679F /* RYBUrl.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* RYBViewController.h */,
 				6003F5A6195388D20070C39A /* RYBViewController.m */,
-				E2132C4120EC6D45002B3D2D /* RYBeee.h */,
-				E2132C4220EC6D45002B3D2D /* RYBeee.m */,
-				E208CF1C20CA180A0014FC23 /* Stack.h */,
-				E208CF1D20CA180A0014FC23 /* Stack.m */,
-				E2132C4420EC6E3A002B3D2D /* RYBeee.xib */,
-				E208CF1920C92C150014FC23 /* UIButton+height.h */,
-				E208CF1A20C92C150014FC23 /* UIButton+height.m */,
+				E248E89A22EED51D00AB1697 /* LaunchScreen.storyboard */,
 				E28EF29A2020157C00493454 /* hot@2x.png */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -168,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				CF9278AB8720575C3BBA9782 /* ToolKit.podspec */,
+				E22D38A822F9CE2200D6679F /* tmp_doctor.txt */,
+				E248E89822EED0E000AB1697 /* qwe.txt */,
 				6B045E7E2E3A3817C8E51283 /* README.md */,
 				A86C4028DB29AC8B008A081E /* LICENSE */,
 			);
@@ -227,6 +223,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -245,11 +242,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E248E89922EED0E000AB1697 /* qwe.txt in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				E22D38A922F9CE2200D6679F /* tmp_doctor.txt in Resources */,
 				E28EF29B2020157C00493454 /* hot@2x.png in Resources */,
-				E2132C4520EC6E3A002B3D2D /* RYBeee.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				E248E89B22EED51D00AB1697 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +279,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RYBTool_Example/Pods-RYBTool_Example-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-RYBTool_Example/Pods-RYBTool_Example-resources.sh",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ToolKit/ToolKit.bundle",
 			);
@@ -291,7 +290,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RYBTool_Example/Pods-RYBTool_Example-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RYBTool_Example/Pods-RYBTool_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -304,9 +303,7 @@
 				6003F59E195388D20070C39A /* RYBAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* RYBViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				E208CF1E20CA180A0014FC23 /* Stack.m in Sources */,
-				E208CF1B20C92C150014FC23 /* UIButton+height.m in Sources */,
-				E2132C4320EC6D45002B3D2D /* RYBeee.m in Sources */,
+				E22D38AC22F9CE6100D6679F /* RYBUrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
