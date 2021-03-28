@@ -1,13 +1,17 @@
 //
 //  RYBViewController.h
-//  RYBTool
+//  RYBTool_Example
 //
-//  Created by tangguoan on 01/05/2017.
-//  Copyright (c) 2017 tangguoan. All rights reserved.
+//  Created by tangguoan on 2021/3/28.
+//  Copyright © 2021 tangguoan. All rights reserved.
 //
 
-@import UIKit;
+#import <UIKit/UIKit.h>
 
-@interface RYBViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
+
+@interface RYBViewController : UIView
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -32,9 +32,6 @@
     "ReactiveCocoa": [
       "~> 2.5"
     ],
-    "PureLayout": [
-      "~> 3.0.2"
-    ],
     "SDWebImage": [
 
     ],

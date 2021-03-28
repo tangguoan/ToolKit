@@ -1,5 +1,4 @@
 PODS:
-  - PureLayout (3.0.2)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -12,52 +11,39 @@ PODS:
   - SDWebImage/Core (4.2.2)
   - SVProgressHUD (2.0.4)
   - ToolKit (0.1.0):
-    - PureLayout (~> 3.0.2)
     - ReactiveCocoa (~> 2.5)
     - SDWebImage
     - SVProgressHUD (~> 2.0.2)
     - ToolKit/TTDate (= 0.1.0)
     - ToolKit/TTNotification (= 0.1.0)
   - ToolKit/TTDate (0.1.0):
-    - PureLayout (~> 3.0.2)
     - ReactiveCocoa (~> 2.5)
     - SDWebImage
     - SVProgressHUD (~> 2.0.2)
   - ToolKit/TTNotification (0.1.0):
-    - PureLayout (~> 3.0.2)
     - ReactiveCocoa (~> 2.5)
     - SDWebImage
     - SVProgressHUD (~> 2.0.2)
-  - UMCAnalytics (5.5.0):
-    - UMCCommon
-  - UMCCommon (1.5.1)
 
 DEPENDENCIES:
   - ToolKit (from `../ToolKit.podspec`)
-  - UMCAnalytics (~> 5.5.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - PureLayout
+  https://github.com/CocoaPods/Specs.git:
     - ReactiveCocoa
     - SDWebImage
     - SVProgressHUD
-    - UMCAnalytics
-    - UMCCommon
 
 EXTERNAL SOURCES:
   ToolKit:
     :path: "../ToolKit.podspec"
 
 SPEC CHECKSUMS:
-  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
-  ToolKit: b862ab6cc7ebbc65e2ac7a7d509e251bbc951427
-  UMCAnalytics: 4667788559a72f2fa5077117d1b8802a3b6eb6bb
-  UMCCommon: 16b674e9de0616d3a6128c551348a686d869c3c7
+  ToolKit: 5b9dae3672c74c5d0d38c063a9eeea5c6534e281
 
-PODFILE CHECKSUM: f780937fcd381f1c0dd1b7f9a849973b4fcc03f8
+PODFILE CHECKSUM: d3e56658b9aadf1668c103f6b0808449e5c9c892
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.10.0

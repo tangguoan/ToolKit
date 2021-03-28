@@ -13,15 +13,12 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* RYBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* RYBAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* RYBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* RYBViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		D91BE5CD7E9CB6862314ABCD /* libPods-RYBTool_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F755CF8947F37C7329240E69 /* libPods-RYBTool_Example.a */; };
-		E22D38A922F9CE2200D6679F /* tmp_doctor.txt in Resources */ = {isa = PBXBuildFile; fileRef = E22D38A822F9CE2200D6679F /* tmp_doctor.txt */; };
-		E22D38AC22F9CE6100D6679F /* RYBUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = E22D38AB22F9CE6100D6679F /* RYBUrl.m */; };
 		E248E89922EED0E000AB1697 /* qwe.txt in Resources */ = {isa = PBXBuildFile; fileRef = E248E89822EED0E000AB1697 /* qwe.txt */; };
-		E248E89B22EED51D00AB1697 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E248E89A22EED51D00AB1697 /* LaunchScreen.storyboard */; };
-		E28EF29B2020157C00493454 /* hot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E28EF29A2020157C00493454 /* hot@2x.png */; };
+		E2953B0F2610480D00E461CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2953B0E2610480D00E461CF /* LaunchScreen.storyboard */; };
+		E2953B1726104A8300E461CF /* RYBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2953B1626104A8300E461CF /* RYBViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +34,6 @@
 		6003F59B195388D20070C39A /* RYBTool-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RYBTool-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* RYBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYBAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* RYBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYBAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* RYBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYBViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* RYBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYBViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
@@ -52,12 +47,10 @@
 		A86C4028DB29AC8B008A081E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C3B949CB95A935199542C9B6 /* Pods-RYBTool_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RYBTool_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RYBTool_Tests/Pods-RYBTool_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CF9278AB8720575C3BBA9782 /* ToolKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ToolKit.podspec; path = ../ToolKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E22D38A822F9CE2200D6679F /* tmp_doctor.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tmp_doctor.txt; sourceTree = "<group>"; };
-		E22D38AA22F9CE6100D6679F /* RYBUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYBUrl.h; sourceTree = "<group>"; };
-		E22D38AB22F9CE6100D6679F /* RYBUrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYBUrl.m; sourceTree = "<group>"; };
 		E248E89822EED0E000AB1697 /* qwe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = qwe.txt; sourceTree = "<group>"; };
-		E248E89A22EED51D00AB1697 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E28EF29A2020157C00493454 /* hot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hot@2x.png"; sourceTree = "<group>"; };
+		E2953B0E2610480D00E461CF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E2953B1526104A8300E461CF /* RYBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RYBViewController.h; sourceTree = "<group>"; };
+		E2953B1626104A8300E461CF /* RYBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RYBViewController.m; sourceTree = "<group>"; };
 		F755CF8947F37C7329240E69 /* libPods-RYBTool_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RYBTool_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,14 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				6003F59C195388D20070C39A /* RYBAppDelegate.h */,
+				E2953B1526104A8300E461CF /* RYBViewController.h */,
+				E2953B1626104A8300E461CF /* RYBViewController.m */,
 				6003F59D195388D20070C39A /* RYBAppDelegate.m */,
-				E22D38AA22F9CE6100D6679F /* RYBUrl.h */,
-				E22D38AB22F9CE6100D6679F /* RYBUrl.m */,
+				E2953B0E2610480D00E461CF /* LaunchScreen.storyboard */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* RYBViewController.h */,
-				6003F5A6195388D20070C39A /* RYBViewController.m */,
-				E248E89A22EED51D00AB1697 /* LaunchScreen.storyboard */,
-				E28EF29A2020157C00493454 /* hot@2x.png */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -162,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				CF9278AB8720575C3BBA9782 /* ToolKit.podspec */,
-				E22D38A822F9CE2200D6679F /* tmp_doctor.txt */,
 				E248E89822EED0E000AB1697 /* qwe.txt */,
 				6B045E7E2E3A3817C8E51283 /* README.md */,
 				A86C4028DB29AC8B008A081E /* LICENSE */,
@@ -214,6 +203,7 @@
 				ORGANIZATIONNAME = tangguoan;
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
+						DevelopmentTeam = Y79P6LVHNK;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -242,13 +232,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2953B0F2610480D00E461CF /* LaunchScreen.storyboard in Resources */,
 				E248E89922EED0E000AB1697 /* qwe.txt in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
-				E22D38A922F9CE2200D6679F /* tmp_doctor.txt in Resources */,
-				E28EF29B2020157C00493454 /* hot@2x.png in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
-				E248E89B22EED51D00AB1697 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,10 +288,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2953B1726104A8300E461CF /* RYBViewController.m in Sources */,
 				6003F59E195388D20070C39A /* RYBAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* RYBViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				E22D38AC22F9CE6100D6679F /* RYBUrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,14 +417,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y79P6LVHNK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RYBTool/RYBTool-Prefix.pch";
 				INFOPLIST_FILE = "RYBTool/RYBTool-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianke.JianKeDoctorBJJK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "健客医院开发";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -449,14 +437,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y79P6LVHNK;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RYBTool/RYBTool-Prefix.pch";
 				INFOPLIST_FILE = "RYBTool/RYBTool-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jianke.JianKeDoctorBJJK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "健客医院开发";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

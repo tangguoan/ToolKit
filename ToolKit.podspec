@@ -43,7 +43,6 @@ TODO: Add long description of the pod here.
     s.public_header_files = 'ToolKit/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
     s.dependency 'ReactiveCocoa', '~> 2.5'
-    s.dependency 'PureLayout', '~> 3.0.2'
     s.dependency 'SDWebImage'
     s.dependency 'SVProgressHUD', '~> 2.0.2'
 end
