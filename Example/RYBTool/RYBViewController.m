@@ -30,60 +30,28 @@
 
 @implementation RYBViewController
 
+//#define JKIMSafe(block)\
+//    if ([NSThread isMainThread]) {\
+//        block();\
+//      }else{\
+//        dispatch_async(dispatch_get_main_queue(), block);\
+//};
+
+
+
+
 - (void)viewDidLoad{
     NSString *path = [[NSBundle mainBundle]pathForResource:@"qwe" ofType:@"txt"];
     __block NSInteger idx = 0;
     DDFileReader *read = [[DDFileReader alloc]initWithFilePath:path];
-    
     [read enumerateLinesUsingBlock:^(NSString *json, BOOL *b) {
         idx = idx + 1;
         json = [json stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-        [self request:json];
-        NSLog(@"序列%ld  用户id:%@", idx,json);
-        
-    }];
-    
-    return;
-    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-        return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-            
-            [subscriber sendNext:@"我是唐国安"];
-            NSError *err = [NSError errorWithDomain:@"eeeee" code:345 userInfo:@{}];
-            [subscriber sendError:err];
-            [subscriber sendCompleted];
-            
-            return [RACDisposable disposableWithBlock:^{
-                
-            }];
-        }];
-    }];
-    
-    
-    [command.executionSignals subscribeNext:^(id  _Nullable x) {
-        NSLog(@"%@", x);
-    }];
-    [command.errors subscribeNext:^(NSError * _Nullable x) {
-        NSLog(@"%@", x);
-    }];
-    [command execute:@1];
-    
-    
-    NSDictionary *dict = @{@"name":@"xmg",@"age":@18};
-    [dict.rac_sequence.signal subscribeNext:^(RACTuple *x) {
-        
-        // 解包元组，会把元组的值，按顺序给参数里面的变量赋值
-        RACTupleUnpack(NSString *key,NSString *value) = x;
-        
-        // 相当于以下写法
-        //        NSString *key = x[0];
-        //        NSString *value = x[1];
-        
-        NSLog(@"%@ %@",key,value);
     }];
 }
 
--(void)request:(NSString *)doctor_id{
-    return;
+
+-(void)requestDoctorId:(NSString *)doctorId{
     NSURL *url = [NSURL URLWithString:@"https://imapi.abcpen.com/auth/grant"];
     //2.创建一个请求对象
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
@@ -95,7 +63,7 @@
     [dic setValue:@"" forKey:@"user_name"];
     [dic setValue:@"" forKey:@"device_id"];
     [dic setValue:@"2" forKey:@"platform_id"];
-    [dic setValue:doctor_id forKey:@"uid"];
+    [dic setValue:doctorId forKey:@"uid"];
 // {"uid":"21083CC2-25C8-429D-998A-1598348AF0C7","user_name":"我是患者","platform_id":"2","device_id":"cesi"}
     
     NSData *param = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];

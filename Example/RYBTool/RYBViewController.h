@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RYBViewController : UIView
+@interface RYBViewController : UIViewController
 
 @end
 
