@@ -41,12 +41,14 @@
 
 
 - (void)viewDidLoad{
+    /// 每一行都分开读取
     NSString *path = [[NSBundle mainBundle]pathForResource:@"qwe" ofType:@"txt"];
     __block NSInteger idx = 0;
     DDFileReader *read = [[DDFileReader alloc]initWithFilePath:path];
     [read enumerateLinesUsingBlock:^(NSString *json, BOOL *b) {
         idx = idx + 1;
         json = [json stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+        NSLog(@"%@",json);
     }];
 }
 
